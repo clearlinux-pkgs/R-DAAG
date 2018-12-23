@@ -4,7 +4,7 @@
 #
 Name     : R-DAAG
 Version  : 1.22
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/DAAG_1.22.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DAAG_1.22.tar.gz
 Summary  : Data Analysis and Graphics Data and Functions
