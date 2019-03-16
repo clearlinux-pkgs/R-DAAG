@@ -4,15 +4,17 @@
 #
 Name     : R-DAAG
 Version  : 1.22.1
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/DAAG_1.22.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DAAG_1.22.1.tar.gz
 Summary  : Data Analysis and Graphics Data and Functions
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-latticeExtra
+Requires: R-highr
+BuildRequires : R-highr
 BuildRequires : R-latticeExtra
 BuildRequires : buildreq-R
+BuildRequires : texlive
 
 %description
 book Maindonald, J.H. and Braun, W.J. (2003, 2007, 2010) "Data
@@ -26,10 +28,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551584046
+export SOURCE_DATE_EPOCH=1552733225
 
 %install
-export SOURCE_DATE_EPOCH=1551584046
+export SOURCE_DATE_EPOCH=1552733225
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -65,8 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library DAAG|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  DAAG || :
 
 
 %files
