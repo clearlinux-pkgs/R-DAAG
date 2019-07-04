@@ -4,17 +4,17 @@
 #
 Name     : R-DAAG
 Version  : 1.22.1
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/DAAG_1.22.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DAAG_1.22.1.tar.gz
 Summary  : Data Analysis and Graphics Data and Functions
 Group    : Development/Tools
 License  : GPL-3.0
-BuildRequires : R-RColorBrewer
-BuildRequires : R-highr
+Requires: R-latticeExtra
+Requires: R-leaps
 BuildRequires : R-latticeExtra
+BuildRequires : R-leaps
 BuildRequires : buildreq-R
-BuildRequires : texlive
 
 %description
 book Maindonald, J.H. and Braun, W.J. (2003, 2007, 2010) "Data
@@ -27,13 +27,13 @@ book Maindonald, J.H. and Braun, W.J. (2003, 2007, 2010) "Data
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556480679
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562203555
 
 %install
-export SOURCE_DATE_EPOCH=1556480679
+export SOURCE_DATE_EPOCH=1562203555
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -62,7 +62,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
