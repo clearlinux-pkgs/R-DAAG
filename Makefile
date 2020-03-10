@@ -1,5 +1,5 @@
 PKG_NAME := R-DAAG
-URL = https://cran.r-project.org/src/contrib/DAAG_1.22.1.tar.gz
+URL = https://cran.r-project.org/src/contrib/DAAG_1.24.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
