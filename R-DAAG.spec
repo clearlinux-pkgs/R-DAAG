@@ -4,7 +4,7 @@
 #
 Name     : R-DAAG
 Version  : 1.24
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/DAAG_1.24.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DAAG_1.24.tar.gz
 Summary  : Data Analysis and Graphics Data and Functions
@@ -12,8 +12,10 @@ Group    : Development/Tools
 License  : GPL-3.0
 Requires: R-latticeExtra
 Requires: R-leaps
+Requires: R-quantreg
 BuildRequires : R-latticeExtra
 BuildRequires : R-leaps
+BuildRequires : R-quantreg
 BuildRequires : buildreq-R
 
 %description
@@ -22,21 +24,22 @@ book Maindonald, J.H. and Braun, W.J. (2003, 2007, 2010) "Data
 
 %prep
 %setup -q -c -n DAAG
+cd %{_builddir}/DAAG
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583846698
+export SOURCE_DATE_EPOCH=1589769456
 
 %install
-export SOURCE_DATE_EPOCH=1583846698
+export SOURCE_DATE_EPOCH=1589769456
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
