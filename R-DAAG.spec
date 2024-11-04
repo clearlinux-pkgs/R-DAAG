@@ -7,7 +7,7 @@
 #
 Name     : R-DAAG
 Version  : 1.25.6
-Release  : 56
+Release  : 57
 URL      : https://cran.r-project.org/src/contrib/DAAG_1.25.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DAAG_1.25.6.tar.gz
 Summary  : Data Analysis and Graphics Data and Functions
